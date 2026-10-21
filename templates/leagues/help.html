@@ -1,0 +1,314 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}User Guide & Walkthroughs - Fantasy Football{% endblock %}
+
+{% block extra_head %}
+<style>
+    .help-nav-pills .nav-link {
+        color: #475569 !important;
+        font-weight: 600;
+        border-radius: 0.6rem;
+        padding: 0.75rem 1.25rem;
+        margin-bottom: 0.35rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        transition: all 0.2s ease;
+    }
+    .help-nav-pills .nav-link:hover {
+        background-color: #f1f5f9;
+        color: #0f172a !important;
+    }
+    .help-nav-pills .nav-link.active {
+        background-color: #2563eb !important;
+        color: #ffffff !important;
+        box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+    }
+    .step-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 1.85rem;
+        height: 1.85rem;
+        border-radius: 50%;
+        background-color: #2563eb;
+        color: white;
+        font-weight: 700;
+        font-size: 0.85rem;
+        margin-right: 0.6rem;
+    }
+    .screenshot-frame {
+        border-radius: 0.75rem;
+        border: 1px solid #cbd5e1;
+        box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    .screenshot-frame img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    .tip-box {
+        background-color: #f0fdf4;
+        border-left: 4px solid #16a34a;
+        padding: 1rem 1.25rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1.25rem;
+    }
+    .warning-box {
+        background-color: #fffbeb;
+        border-left: 4px solid #f59e0b;
+        padding: 1rem 1.25rem;
+        border-radius: 0.5rem;
+        margin-bottom: 1.25rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2 mb-4">
+    <div>
+        <h2 class="fw-bold mb-1">
+            <i class="bi bi-question-circle text-primary me-2"></i>League Manager Guide & Help
+        </h2>
+        <p class="text-muted mb-0">Step-by-step instructions and visual screenshots for league managers to easily manage seasons, players, picks, and live scores.</p>
+    </div>
+    <div>
+        <a href="{% url 'admin_hub' %}" class="btn btn-primary shadow-sm">
+            <i class="bi bi-sliders me-1"></i> Open Admin Hub
+        </a>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- LEFT SIDEBAR: Nav Pills -->
+    <div class="col-lg-3">
+        <div class="ff-card p-3 sticky-top" style="top: 1.5rem;">
+            <h6 class="fw-bold text-uppercase text-muted small mb-3 px-2">Workflows & Topics</h6>
+            <div class="nav flex-column help-nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active text-start" id="tab-overview-btn" data-bs-toggle="pill" data-bs-target="#tab-overview" type="button" role="tab">
+                    <i class="bi bi-info-circle"></i> 1. How the Game Works
+                </button>
+                <button class="nav-link text-start" id="tab-new-season-btn" data-bs-toggle="pill" data-bs-target="#tab-new-season" type="button" role="tab">
+                    <i class="bi bi-calendar-plus"></i> 2. Starting a New Season
+                </button>
+                <button class="nav-link text-start" id="tab-roster-picks-btn" data-bs-toggle="pill" data-bs-target="#tab-roster-picks" type="button" role="tab">
+                    <i class="bi bi-pencil-square"></i> 3. Picking Teams
+                </button>
+                <button class="nav-link text-start" id="tab-lock-btn" data-bs-toggle="pill" data-bs-target="#tab-lock" type="button" role="tab">
+                    <i class="bi bi-lock"></i> 4. Locking Picks
+                </button>
+                <button class="nav-link text-start" id="tab-scores-btn" data-bs-toggle="pill" data-bs-target="#tab-scores" type="button" role="tab">
+                    <i class="bi bi-arrow-repeat"></i> 5. Refreshing BBC Scores
+                </button>
+                <button class="nav-link text-start" id="tab-archive-btn" data-bs-toggle="pill" data-bs-target="#tab-archive" type="button" role="tab">
+                    <i class="bi bi-archive"></i> 6. Archiving Season
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- RIGHT CONTENT: Workflow Steps -->
+    <div class="col-lg-9">
+        <div class="tab-content" id="v-pills-tabContent">
+
+            <!-- WORKFLOW 1: Overview & Scoring -->
+            <div class="tab-pane fade show active ff-card p-4" id="tab-overview" role="tabpanel">
+                <h3 class="fw-bold mb-3">⚽ 1. How the Fantasy League Works</h3>
+                <p class="lead text-muted">
+                    This fantasy football league is designed around one unique and fun rule: <strong>every player chooses one team to win and one team to lose</strong> in each UK division.
+                </p>
+
+                <div class="tip-box">
+                    <h5 class="fw-bold mb-1"><i class="bi bi-calculator me-1"></i> The Golden Scoring Formula</h5>
+                    <div class="fs-5 my-2 font-monospace">
+                        Player Score = (Points of Winner Team) &minus; (Points of Loser Team)
+                    </div>
+                    <small class="text-muted">
+                        Points are taken directly from the official BBC Sport football tables for all 4 English leagues (Premier League, Championship, League One, League Two).
+                    </small>
+                </div>
+
+                <h5 class="fw-bold mt-4 mb-2">Example:</h5>
+                <div class="table-responsive">
+                    <table class="table table-bordered align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Division</th>
+                                <th>Your Winner Team</th>
+                                <th>Winner Pts</th>
+                                <th>Your Loser Team</th>
+                                <th>Loser Pts</th>
+                                <th class="text-end">Your Net Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Premier League</strong></td>
+                                <td><span class="text-success fw-bold">Arsenal</span></td>
+                                <td>24</td>
+                                <td><span class="text-danger fw-bold">Southampton</span></td>
+                                <td>4</td>
+                                <td class="text-end fw-bold text-success">+20</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Championship</strong></td>
+                                <td><span class="text-success fw-bold">Leeds United</span></td>
+                                <td>22</td>
+                                <td><span class="text-danger fw-bold">Portsmouth</span></td>
+                                <td>9</td>
+                                <td class="text-end fw-bold text-success">+13</td>
+                            </tr>
+                            <tr class="table-secondary fw-bold">
+                                <td colspan="5">Total Score (Sum across divisions)</td>
+                                <td class="text-end text-primary fs-5">+33 pts</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="screenshot-frame">
+                    <img src="{% static 'img/screenshots/dashboard.png' %}" alt="Dashboard Screenshot">
+                </div>
+            </div>
+
+            <!-- WORKFLOW 2: Start a New Season -->
+            <div class="tab-pane fade ff-card p-4" id="tab-new-season" role="tabpanel">
+                <h3 class="fw-bold mb-3">📅 2. Workflow: Starting a New Season (August)</h3>
+                <p class="text-muted">Follow these 3 easy steps whenever a new football season begins.</p>
+
+                <div class="mb-4">
+                    <h5><span class="step-number">1</span> Open the Admin Hub</h5>
+                    <p class="text-muted">Click <strong>"League Admin Hub"</strong> in the top navigation bar.</p>
+                </div>
+
+                <div class="mb-4">
+                    <h5><span class="step-number">2</span> Click "Start New Season"</h5>
+                    <p class="text-muted">Click the blue <strong>"Start New Season"</strong> button in the top right corner.</p>
+                    <ul>
+                        <li>Enter a title (e.g. <code>Season 2026/27</code> or <code>2027 Winter League</code>).</li>
+                        <li>Toggle <strong>"Set as current active season"</strong> so the BBC scraper automatically routes fresh scores to this season.</li>
+                        <li>Click <strong>"Create & Proceed to Roster"</strong>.</li>
+                    </ul>
+                </div>
+
+                <div class="mb-4">
+                    <h5><span class="step-number">3</span> Add Any New Friends (Players)</h5>
+                    <p class="text-muted">If a new player joins the group, enter their name in the <strong>"Add New Player"</strong> card on the right side of the Admin Hub.</p>
+                </div>
+
+                <div class="screenshot-frame">
+                    <img src="{% static 'img/screenshots/admin_hub.png' %}" alt="Admin Hub Screenshot">
+                </div>
+            </div>
+
+            <!-- WORKFLOW 3: Enrolling Players & Configuring Picks -->
+            <div class="tab-pane fade ff-card p-4" id="tab-roster-picks" role="tabpanel">
+                <h3 class="fw-bold mb-3">👥 3. Workflow: Enrolling Players & Setting Team Picks</h3>
+                <p class="text-muted">How to enroll players and assign their winner/loser predictions for each division.</p>
+
+                <div class="mb-4">
+                    <h5><span class="step-number">1</span> Select Participants</h5>
+                    <p class="text-muted">On the <strong>Roster & Team Picks</strong> screen, look at the <strong>"Select Participants"</strong> box on the right. Simply tick the checkbox for each friend taking part this year, and click <strong>"Save Enrolled Players"</strong>.</p>
+                </div>
+
+                <div class="screenshot-frame">
+                    <img src="{% static 'img/screenshots/roster_manage.png' %}" alt="Roster Management Screenshot">
+                </div>
+
+                <div class="mb-4">
+                    <h5><span class="step-number">2</span> Click "Configure Picks"</h5>
+                    <p class="text-muted">Next to each player's name, click the blue <strong>"Configure Picks"</strong> button.</p>
+                </div>
+
+                <div class="mb-4">
+                    <h5><span class="step-number">3</span> Pick Winner & Loser Teams</h5>
+                    <p class="text-muted">For each division, use the dropdowns to pick:
+                        <ul>
+                            <li><strong class="text-success">Winner Team</strong> (Team expected to finish high and score lots of points).</li>
+                            <li><strong class="text-danger">Loser Team</strong> (Team expected to struggle at the bottom).</li>
+                        </ul>
+                    </p>
+                    <div class="warning-box">
+                        <i class="bi bi-shield-exclamation me-1"></i> <strong>Safety Rule:</strong> You cannot select the same team as both winner and loser in the same division. The form will show a clear red message if this happens.
+                    </div>
+                    <p class="text-muted">Click <strong>"Save Picks"</strong> when finished. Repeat this for each player.</p>
+                </div>
+
+                <div class="screenshot-frame">
+                    <img src="{% static 'img/screenshots/configure_picks.png' %}" alt="Configure Picks Screenshot">
+                </div>
+            </div>
+
+            <!-- WORKFLOW 4: Locking Picks -->
+            <div class="tab-pane fade ff-card p-4" id="tab-lock" role="tabpanel">
+                <h3 class="fw-bold mb-3">🔒 4. Workflow: Locking Picks (Kickoff Day)</h3>
+                <p class="text-muted">Once Gameweek 1 kicks off, lock the picks to freeze all choices and prevent accidental changes.</p>
+
+                <div class="mb-4">
+                    <h5><span class="step-number">1</span> Click "Lock Picks Now"</h5>
+                    <p class="text-muted">In the <strong>Roster & Selections</strong> page, click the yellow <strong>"Lock Picks Now"</strong> button in the top right header.</p>
+                </div>
+
+                <div class="tip-box">
+                    <h5 class="fw-bold mb-1"><i class="bi bi-shield-lock-fill me-1"></i> What happens when picks are locked?</h5>
+                    <ul class="mb-0">
+                        <li>The badge turns red: <code>Picks Locked 🔒</code>.</li>
+                        <li>All "Edit picks" links are safely hidden from the scoreboard and player cards.</li>
+                        <li>Nobody can alter selections during the season.</li>
+                        <li>You can unlock them at any time by simply clicking <strong>"Unlock Picks"</strong> if an honest correction is needed.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- WORKFLOW 5: Refreshing Scores -->
+            <div class="tab-pane fade ff-card p-4" id="tab-scores" role="tabpanel">
+                <h3 class="fw-bold mb-3">🔄 5. Workflow: Refreshing Live Scores</h3>
+                <p class="text-muted">Scores are retrieved directly from BBC Sport tables.</p>
+
+                <div class="mb-4">
+                    <h5><span class="step-number">1</span> One-Click Refresh</h5>
+                    <p class="text-muted">Anytime games have finished, simply click the <strong>"Refresh Scores"</strong> button in the top dark navigation bar.</p>
+                    <p class="text-muted">The system fetches the latest standings and recalculates all fantasy scores instantly. A green confirmation banner will appear showing how many teams were updated.</p>
+                </div>
+
+                <div class="mb-4">
+                    <h5><span class="step-number">2</span> Inspect Real Tables</h5>
+                    <p class="text-muted">Click <strong>"Real Tables"</strong> in the top menu to view the complete official BBC tables (showing matches played, won, drawn, lost, goal differences, and points).</p>
+                </div>
+
+                <div class="screenshot-frame">
+                    <img src="{% static 'img/screenshots/real_tables.png' %}" alt="Real Tables Screenshot">
+                </div>
+            </div>
+
+            <!-- WORKFLOW 6: Archiving Season -->
+            <div class="tab-pane fade ff-card p-4" id="tab-archive" role="tabpanel">
+                <h3 class="fw-bold mb-3">🏛️ 6. Workflow: Archiving a Completed Season (May)</h3>
+                <p class="text-muted">How to safely wrap up a finished championship without losing any data.</p>
+
+                <div class="mb-4">
+                    <h5><span class="step-number">1</span> Final Refresh</h5>
+                    <p class="text-muted">After the last game of the season has been played, click <strong>"Refresh Scores"</strong> so the final standings are fetched.</p>
+                </div>
+
+                <div class="mb-4">
+                    <h5><span class="step-number">2</span> Click "Archive Season"</h5>
+                    <p class="text-muted">In the <strong>League Admin Hub</strong>, click the red <strong>"Archive Season"</strong> button next to the active season.</p>
+                </div>
+
+                <div class="tip-box">
+                    <h5 class="fw-bold mb-1"><i class="bi bi-check-circle-fill me-1"></i> Data Permanently Preserved</h5>
+                    <p class="mb-0">
+                        The season is now permanently frozen in history. You and your friends can always look back at who won the league in previous years by selecting the season in the <strong>"Seasons"</strong> dropdown at the top of the page.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

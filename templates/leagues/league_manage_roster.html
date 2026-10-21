@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+
+{% block title %}Roster & Selections: {{ league.name }} - Fantasy Football{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-2 mb-4">
+    <div>
+        <div class="d-flex align-items-center gap-2 mb-1">
+            <a href="{% url 'admin_hub' %}" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Hub
+            </a>
+            <h2 class="fw-bold mb-0">Roster & Team Picks: {{ league.name }}</h2>
+            {% if league.is_locked %}
+                <span class="badge bg-danger fs-6"><i class="bi bi-lock-fill me-1"></i>Picks Locked</span>
+            {% else %}
+                <span class="badge bg-success fs-6"><i class="bi bi-unlock-fill me-1"></i>Picks Open</span>
+            {% endif %}
+            {% if league.is_archived %}
+                <span class="badge bg-secondary fs-6"><i class="bi bi-archive-fill me-1"></i>Archived</span>
+            {% endif %}
+        </div>
+        <p class="text-muted mb-0">Select which players participate in this season, then configure their winning & losing teams. Lock picks once the season matches kick off!</p>
+    </div>
+    <div class="d-flex gap-2">
+        <form method="post" action="{% url 'league_toggle_lock' league.id %}" class="d-inline">
+            {% csrf_token %}
+            {% if league.is_locked %}
+                <button type="submit" class="btn btn-outline-warning" title="Unlock picks to allow edits">
+                    <i class="bi bi-unlock me-1"></i> Unlock Picks
+                </button>
+            {% else %}
+                <button type="submit" class="btn btn-warning" title="Lock picks to freeze selections">
+                    <i class="bi bi-lock-fill me-1"></i> Lock Picks Now
+                </button>
+            {% endif %}
+        </form>
+
+        <a href="{% url 'league_detail' league.id %}" class="btn btn-outline-primary">
+            <i class="bi bi-eye me-1"></i> View Scoreboard
+        </a>
+    </div>
+</div>
+
+<div class="row g-4">
+    <!-- Active Players in this League -->
+    <div class="col-lg-8">
+        <div class="ff-card p-4">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="fw-bold mb-0">
+                    <i class="bi bi-person-check text-success me-2"></i>Participating Players & Their Picks
+                </h5>
+                <span class="badge bg-primary">{{ league.players.count }} in Season</span>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle mb-0">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Player</th>
+                            <th>Status of Picks</th>
+                            <th class="text-end">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for player in league.players.all %}
+                        <tr>
+                            <td>
+                                <span class="fw-bold fs-6">{{ player.name }}</span>
+                                {% if player.email %}
+                                    <div class="text-muted small">{{ player.email }}</div>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% with p_selections=player.selections.all %}
+                                    {% if p_selections %}
+                                        <div class="d-flex flex-wrap gap-1">
+                                            {% for sel in p_selections %}
+                                                {% if sel.ff_league == league %}
+                                                    <span class="badge bg-light text-dark border">
+                                                        <strong>{{ sel.league.name }}:</strong> 
+                                                        <span class="text-success">{{ sel.winner.name }}</span> / 
+                                                        <span class="text-danger">{{ sel.loser.name }}</span>
+                                                    </span>
+                                                {% endif %}
+                                            {% endfor %}
+                                        </div>
+                                    {% else %}
+                                        <span class="badge bg-warning-subtle text-warning-emphasis">Picks Not Configured</span>
+                                    {% endif %}
+                                {% endwith %}
+                            </td>
+                            <td class="text-end">
+                                {% if league.is_locked %}
+                                    <span class="btn btn-sm btn-outline-secondary disabled" title="Picks are locked for this season">
+                                        <i class="bi bi-lock-fill me-1"></i> Locked
+                                    </span>
+                                {% else %}
+                                    <a href="{% url 'configure_picks' league.id player.id %}" class="btn btn-sm btn-primary">
+                                        <i class="bi bi-pencil-fill me-1"></i> Configure Picks
+                                    </a>
+                                {% endif %}
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="3" class="text-center py-4 text-muted">
+                                No players are enrolled in this season yet. Use the roster manager on the right to add them!
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Checkbox Roster Manager -->
+    <div class="col-lg-4">
+        <div class="ff-card p-4 border-primary">
+            <h5 class="fw-bold mb-2">
+                <i class="bi bi-people-fill text-primary me-2"></i>Select Participants
+            </h5>
+            {% if league.is_locked %}
+                <div class="alert alert-secondary small py-2 mb-3">
+                    <i class="bi bi-lock-fill me-1"></i> Player enrollment is locked for this season.
+                </div>
+            {% else %}
+                <p class="text-muted small mb-3">Check the box for each player taking part in this season.</p>
+            {% endif %}
+
+            <form method="post">
+                {% csrf_token %}
+                <div class="mb-3 max-h-50 overflow-auto" style="max-height: 380px;">
+                    {% for p in all_players %}
+                    <div class="form-check py-2 border-bottom">
+                        <input class="form-check-input" type="checkbox" name="player_ids" value="{{ p.id }}" id="player_{{ p.id }}"
+                               {% if p.id in league_player_ids %}checked{% endif %}
+                               {% if league.is_locked %}disabled{% endif %}>
+                        <label class="form-check-label fw-semibold" for="player_{{ p.id }}">
+                            {{ p.name }}
+                        </label>
+                    </div>
+                    {% empty %}
+                    <p class="text-muted small">No players registered yet. Create players in the Admin Hub first.</p>
+                    {% endfor %}
+                </div>
+
+                {% if not league.is_locked %}
+                <button type="submit" class="btn btn-primary w-100">
+                    <i class="bi bi-check2-circle me-1"></i> Save Enrolled Players
+                </button>
+                {% else %}
+                <button type="button" class="btn btn-outline-secondary w-100 disabled">
+                    <i class="bi bi-lock-fill me-1"></i> Enrolled Players Locked
+                </button>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

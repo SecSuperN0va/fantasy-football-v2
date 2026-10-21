@@ -1,0 +1,4 @@
+Django>=5.1
+requests>=2.31.0
+lxml>=5.1.0
+gunicorn>=22.0.0

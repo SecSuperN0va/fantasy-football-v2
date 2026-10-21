@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}Configure Picks: {{ player.name }} - Fantasy Football{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+        <div class="d-flex align-items-center gap-2 mb-3">
+            <a href="{% url 'league_manage_roster' ff_league.id %}" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i> Roster
+            </a>
+            <div>
+                <h2 class="fw-bold mb-0">Team Picks for {{ player.name }}</h2>
+                <div class="text-muted">Season: <strong>{{ ff_league.name }}</strong></div>
+            </div>
+        </div>
+
+        <div class="ff-card p-4">
+            <div class="alert alert-info d-flex align-items-center mb-4">
+                <i class="bi bi-info-circle-fill fs-4 me-3 text-primary"></i>
+                <div>
+                    <strong>Pick Rule:</strong> For each active UK division, choose <strong>1 team to win</strong> (points gained) and <strong>1 team to lose</strong> (points deducted). The team cannot be both winner and loser in the same league.
+                </div>
+            </div>
+
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger">
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+
+            <form method="post">
+                {% csrf_token %}
+
+                {% for item in form.league_fields %}
+                <div class="card mb-4 border shadow-none">
+                    <div class="card-header bg-light d-flex justify-content-between align-items-center py-2 px-3">
+                        <span class="fw-bold text-dark fs-6">
+                            ⚽ {{ item.sports_league.name }}
+                        </span>
+                        <span class="badge bg-secondary-subtle text-secondary small">Division {{ item.sports_league.order_idx }}</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="row g-3">
+                            <!-- Winner Field -->
+                            <div class="col-md-6">
+                                <label class="form-label text-success fw-bold" for="{{ item.winner_field.id_for_label }}">
+                                    <i class="bi bi-arrow-up-circle-fill me-1"></i> Winner Team (+ points)
+                                </label>
+                                {{ item.winner_field }}
+                                {% if item.winner_field.errors %}
+                                    <div class="text-danger small mt-1">{{ item.winner_field.errors }}</div>
+                                {% endif %}
+                                <div class="form-text text-muted">Team expected to finish high in the table.</div>
+                            </div>
+
+                            <!-- Loser Field -->
+                            <div class="col-md-6">
+                                <label class="form-label text-danger fw-bold" for="{{ item.loser_field.id_for_label }}">
+                                    <i class="bi bi-arrow-down-circle-fill me-1"></i> Loser Team (- points)
+                                </label>
+                                {{ item.loser_field }}
+                                {% if item.loser_field.errors %}
+                                    <div class="text-danger small mt-1">{{ item.loser_field.errors }}</div>
+                                {% endif %}
+                                <div class="form-text text-muted">Team expected to struggle at bottom.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                    <a href="{% url 'league_manage_roster' ff_league.id %}" class="btn btn-outline-secondary">
+                        Cancel
+                    </a>
+                    <button type="submit" class="btn btn-primary px-4 py-2 fw-semibold">
+                        <i class="bi bi-check-circle-fill me-1"></i> Save {{ player.name }}'s Picks
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

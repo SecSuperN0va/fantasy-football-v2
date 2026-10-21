@@ -1,0 +1,21 @@
+[Unit]
+Description=UK Fantasy Football Web Application
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/home/pi/fantasy_football
+EnvironmentFile=-/home/pi/fantasy_football/.env
+ExecStart=/home/pi/fantasy_football/venv/bin/gunicorn fantasy_football.wsgi:application --bind 0.0.0.0:8000 --workers 3 --timeout 120 --access-logfile - --error-logfile -
+Restart=always
+RestartSec=5s
+
+# Hardening / Sandboxing
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=fantasy-football
+
+[Install]
+WantedBy=multi-user.target

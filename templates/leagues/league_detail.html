@@ -1,0 +1,249 @@
+{% extends 'base.html' %}
+
+{% block title %}Scoreboard: {{ ff_league.name }} - Fantasy Football{% endblock %}
+
+{% block content %}
+<div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center gap-3 mb-4">
+    <div>
+        <div class="d-flex align-items-center gap-2 mb-1">
+            <a href="{% url 'dashboard' %}" class="btn btn-sm btn-outline-secondary">
+                <i class="bi bi-arrow-left"></i>
+            </a>
+            <h2 class="fw-bold mb-0">{{ ff_league.name }} Scoreboard</h2>
+            {% if ff_league.is_active %}
+                <span class="badge bg-success">Active Season</span>
+            {% endif %}
+            {% if ff_league.is_locked %}
+                <span class="badge bg-danger"><i class="bi bi-lock-fill me-1"></i>Picks Locked</span>
+            {% else %}
+                <span class="badge bg-success-subtle text-success border border-success-subtle"><i class="bi bi-unlock-fill me-1"></i>Picks Open</span>
+            {% endif %}
+            {% if ff_league.is_archived %}
+                <span class="badge bg-secondary"><i class="bi bi-archive-fill me-1"></i>Archived</span>
+            {% endif %}
+        </div>
+        <p class="text-muted mb-0">Full standings breakdown by division. Total score is the sum of (Winner Pts - Loser Pts) across all active leagues.</p>
+    </div>
+
+    <div class="d-flex flex-wrap align-items-center gap-2">
+        <!-- View Toggle (Grid Table vs Player Cards) -->
+        <div class="btn-group" role="group" aria-label="View Switcher">
+            <button type="button" class="btn btn-outline-primary active" id="btn-view-table" onclick="switchView('table')">
+                <i class="bi bi-table me-1"></i> Grid Table
+            </button>
+            <button type="button" class="btn btn-outline-primary" id="btn-view-cards" onclick="switchView('cards')">
+                <i class="bi bi-grid me-1"></i> Player Cards
+            </button>
+        </div>
+
+        <!-- Density Toggle (Normal vs Compact) -->
+        <button type="button" class="btn btn-outline-secondary" id="btn-compact-toggle" onclick="toggleDensity()" title="Toggle compact row view to see more players">
+            <i class="bi bi-arrows-collapse me-1"></i> <span id="density-label">Compact View</span>
+        </button>
+
+        {% if ff_league.is_locked %}
+            <a href="{% url 'league_manage_roster' ff_league.id %}" class="btn btn-outline-secondary">
+                <i class="bi bi-lock-fill me-1"></i> View Roster (Locked)
+            </a>
+        {% else %}
+            <a href="{% url 'league_manage_roster' ff_league.id %}" class="btn btn-primary">
+                <i class="bi bi-pencil-square me-1"></i> Manage Roster & Picks
+            </a>
+        {% endif %}
+    </div>
+</div>
+
+<!-- VIEW 1: Grid Table View -->
+<div id="view-table" class="ff-card overflow-hidden mb-4">
+    <div class="table-responsive">
+        <table class="table-modern table align-middle" id="scoreboard-table">
+            <thead>
+                <tr>
+                    <th style="width: 70px;">Rank</th>
+                    <th style="min-width: 150px;">Player</th>
+                    {% for sl in standings_data.sports_leagues %}
+                        <th class="text-center" style="min-width: 220px;">
+                            <div>{{ sl.name }}</div>
+                            <small class="text-muted fw-normal">Winner &bull; Loser &bull; Net</small>
+                        </th>
+                    {% endfor %}
+                    <th class="text-end" style="width: 130px;">Total Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in standings_data.leaderboard %}
+                <tr>
+                    <td>
+                        <span class="rank-badge {% if row.rank <= 3 %}rank-{{ row.rank }}{% else %}rank-other{% endif %}">
+                            {{ row.rank }}
+                        </span>
+                    </td>
+                    <td>
+                        <div class="fw-bold fs-6">{{ row.player.name }}</div>
+                        {% if not ff_league.is_locked %}
+                        <a href="{% url 'configure_picks' ff_league.id row.player.id %}" class="small text-decoration-none text-muted" title="Edit player picks">
+                            <i class="bi bi-gear"></i> Edit picks
+                        </a>
+                        {% endif %}
+                    </td>
+
+                    {% for item in row.breakdown %}
+                    <td class="text-center">
+                        {% if item.has_selection %}
+                            <div class="d-flex flex-column align-items-center gap-1">
+                                <span class="pick-pill pick-pill-winner" title="Winner: {{ item.winner_name }}">
+                                    <i class="bi bi-arrow-up-circle-fill text-success"></i> {{ item.winner_name }}: <strong>{{ item.winner_points }}</strong>
+                                </span>
+                                <span class="pick-pill pick-pill-loser" title="Loser: {{ item.loser_name }}">
+                                    <i class="bi bi-arrow-down-circle-fill text-danger"></i> {{ item.loser_name }}: <strong>{{ item.loser_points }}</strong>
+                                </span>
+                                <span class="badge bg-light text-dark border">
+                                    Net: <strong>{% if item.net_points > 0 %}+{% endif %}{{ item.net_points }}</strong>
+                                </span>
+                            </div>
+                        {% else %}
+                            <span class="text-muted">&mdash;</span>
+                        {% endif %}
+                    </td>
+                    {% endfor %}
+
+                    <td class="text-end">
+                        <span class="points-pill {% if row.total_score > 0 %}points-positive{% elif row.total_score < 0 %}points-negative{% else %}points-zero{% endif %}">
+                            {% if row.total_score > 0 %}+{% endif %}{{ row.total_score }}
+                        </span>
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="10" class="text-center py-4 text-muted">No players configured.</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- VIEW 2: Player Cards View -->
+<div id="view-cards" class="d-none">
+    <div class="row g-4 mb-4">
+        {% for row in standings_data.leaderboard %}
+        <div class="col-md-6 col-lg-4">
+            <div class="player-card shadow-sm">
+                <div class="player-card-header d-flex justify-content-between align-items-center">
+                    <div class="d-flex align-items-center gap-2">
+                        <span class="rank-badge {% if row.rank <= 3 %}rank-{{ row.rank }}{% else %}rank-other{% endif %}">
+                            {{ row.rank }}
+                        </span>
+                        <div>
+                            <h5 class="fw-bold mb-0">{{ row.player.name }}</h5>
+                            <span class="text-muted small">Rank #{{ row.rank }}</span>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="points-pill {% if row.total_score > 0 %}points-positive{% elif row.total_score < 0 %}points-negative{% else %}points-zero{% endif %}">
+                            {% if row.total_score > 0 %}+{% endif %}{{ row.total_score }}
+                        </span>
+                    </div>
+                </div>
+
+                <div class="card-body p-0 flex-grow-1">
+                    {% for item in row.breakdown %}
+                    <div class="division-row">
+                        <div class="flex-grow-1">
+                            <div class="fw-bold small text-muted text-uppercase mb-1">{{ item.sports_league.name }}</div>
+                            {% if item.has_selection %}
+                                <div class="d-flex flex-column gap-1">
+                                    <div class="text-success small">
+                                        <i class="bi bi-arrow-up-circle-fill"></i> <strong>{{ item.winner_name }}</strong> ({{ item.winner_points }} pts)
+                                    </div>
+                                    <div class="text-danger small">
+                                        <i class="bi bi-arrow-down-circle-fill"></i> <strong>{{ item.loser_name }}</strong> ({{ item.loser_points }} pts)
+                                    </div>
+                                </div>
+                            {% else %}
+                                <span class="text-muted small">No picks set</span>
+                            {% endif %}
+                        </div>
+
+                        <div class="text-end ps-2">
+                            {% if item.has_selection %}
+                                <span class="badge {% if item.net_points > 0 %}bg-success{% elif item.net_points < 0 %}bg-danger{% else %}bg-secondary{% endif %} px-2 py-1">
+                                    {% if item.net_points > 0 %}+{% endif %}{{ item.net_points }}
+                                </span>
+                            {% else %}
+                                <span class="text-muted">&mdash;</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <div class="p-2 bg-light border-top text-center">
+                    {% if not ff_league.is_locked %}
+                    <a href="{% url 'configure_picks' ff_league.id row.player.id %}" class="btn btn-sm btn-link text-decoration-none">
+                        <i class="bi bi-pencil me-1"></i> Edit {{ row.player.name }}'s Picks
+                    </a>
+                    {% else %}
+                    <span class="text-muted small">
+                        <i class="bi bi-lock-fill me-1"></i> Picks locked
+                    </span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+function switchView(view) {
+    const tableDiv = document.getElementById('view-table');
+    const cardsDiv = document.getElementById('view-cards');
+    const btnTable = document.getElementById('btn-view-table');
+    const btnCards = document.getElementById('btn-view-cards');
+
+    if (view === 'table') {
+        tableDiv.classList.remove('d-none');
+        cardsDiv.classList.add('d-none');
+        btnTable.classList.add('active');
+        btnCards.classList.remove('active');
+    } else {
+        tableDiv.classList.add('d-none');
+        cardsDiv.classList.remove('d-none');
+        btnTable.classList.remove('active');
+        btnCards.classList.add('active');
+    }
+}
+
+function toggleDensity() {
+    const table = document.getElementById('scoreboard-table');
+    const btn = document.getElementById('btn-compact-toggle');
+    const label = document.getElementById('density-label');
+
+    table.classList.toggle('table-compact');
+    const isCompact = table.classList.contains('table-compact');
+
+    if (isCompact) {
+        btn.classList.add('btn-secondary');
+        btn.classList.remove('btn-outline-secondary');
+        label.innerText = 'Comfortable View';
+        localStorage.setItem('ff_table_density', 'compact');
+    } else {
+        btn.classList.remove('btn-secondary');
+        btn.classList.add('btn-outline-secondary');
+        label.innerText = 'Compact View';
+        localStorage.setItem('ff_table_density', 'comfortable');
+    }
+}
+
+// Restore saved density preference on load
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('ff_table_density') === 'compact') {
+        toggleDensity();
+    }
+});
+</script>
+{% endblock %}

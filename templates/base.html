@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}UK Fantasy Football{% endblock %} - Winner/Loser League</title>
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Custom Modern Styling -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    {% block extra_head %}{% endblock %}
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark ff-navbar">
+        <div class="container-fluid px-lg-4">
+            <a class="navbar-brand ff-brand" href="{% url 'dashboard' %}">
+                <span>⚽ Fantasy Football</span>
+                <span class="ff-brand-badge">UK League</span>
+            </a>
+            
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#ffNavbar" aria-controls="ffNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="ffNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-3">
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'dashboard' %}active{% endif %}" href="{% url 'dashboard' %}">
+                            <i class="bi bi-speedometer2 me-1"></i> Dashboard
+                        </a>
+                    </li>
+                    
+                    {% if nav_ff_leagues %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle {% if 'league' in request.resolver_match.url_name and request.resolver_match.url_name != 'real_tables' %}active{% endif %}" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="bi bi-trophy me-1"></i> Seasons
+                        </a>
+                        <ul class="dropdown-menu shadow-sm border-0">
+                            {% for fl in nav_ff_leagues %}
+                            <li>
+                                <a class="dropdown-item d-flex justify-content-between align-items-center py-2" href="{% url 'league_detail' fl.id %}">
+                                    <span>{{ fl.name }}</span>
+                                    {% if fl.is_active %}<span class="badge bg-success ms-2">Active</span>{% endif %}
+                                </a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    {% endif %}
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'real_tables' %}active{% endif %}" href="{% url 'real_tables' %}">
+                            <i class="bi bi-table me-1"></i> Real Tables
+                        </a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link {% if 'admin' in request.resolver_match.url_name %}active{% endif %}" href="{% url 'admin_hub' %}">
+                            <i class="bi bi-sliders me-1"></i> League Admin Hub
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.resolver_match.url_name == 'help' %}active{% endif %}" href="{% url 'help' %}">
+                            <i class="bi bi-question-circle me-1"></i> Help & Guide
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-2">
+                    <!-- Live Scrape Trigger Button -->
+                    <form method="post" action="{% url 'scrape_trigger' %}" class="d-inline">
+                        {% csrf_token %}
+                        <input type="hidden" name="next" value="{{ request.path }}">
+                        <button type="submit" class="btn btn-outline-light btn-sm d-flex align-items-center gap-1 shadow-sm" title="Scrape latest tables from BBC Sport">
+                            <i class="bi bi-arrow-repeat"></i>
+                            <span class="d-none d-sm-inline">Refresh Scores</span>
+                        </button>
+                    </form>
+
+                    <a href="/admin/" class="btn btn-sm btn-dark text-nowrap" target="_blank" title="Django System Admin">
+                        <i class="bi bi-shield-lock me-1"></i> Django Admin
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Global Info Bar / Freshness Notice -->
+    {% if latest_scrape_time %}
+    <div class="bg-light border-bottom py-1 px-3 text-muted small text-center">
+        <i class="bi bi-info-circle text-primary me-1"></i> Live data sourced from BBC Sport &bull; Last synchronized: <strong>{{ latest_scrape_time|date:"D, d M Y - H:i" }}</strong>
+    </div>
+    {% endif %}
+
+    <!-- Django Messages (Alerts) -->
+    <div class="container-fluid px-lg-4 mt-3">
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags|default:'info' }} alert-dismissible fade show shadow-sm" role="alert">
+                {% if message.tags == 'success' %}
+                    <i class="bi bi-check-circle-fill me-2"></i>
+                {% elif message.tags == 'error' or message.tags == 'danger' %}
+                    <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                {% else %}
+                    <i class="bi bi-info-circle-fill me-2"></i>
+                {% endif %}
+                {{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <!-- Main Content Container -->
+    <main class="container-fluid px-lg-4 py-3 flex-grow-1">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container-fluid px-lg-4 text-center">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+                <div>
+                    <strong>Fantasy Football UK</strong> &mdash; Winner & Loser League
+                </div>
+                <div class="text-muted">
+                    Scoring Rule: <code class="text-primary bg-light px-2 py-1 rounded">Score = Winner Team Pts - Loser Team Pts</code>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 Bundle JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

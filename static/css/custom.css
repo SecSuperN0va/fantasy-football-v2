@@ -1,0 +1,328 @@
+:root {
+    --ff-primary: #0f172a;
+    --ff-primary-light: #1e293b;
+    --ff-accent: #2563eb;
+    --ff-accent-hover: #1d4ed8;
+    --ff-success: #10b981;
+    --ff-danger: #ef4444;
+    --ff-warning: #f59e0b;
+    --ff-bg: #f8fafc;
+    --ff-card-bg: #ffffff;
+    --ff-text-main: #0f172a;
+    --ff-text-muted: #64748b;
+    --ff-border: #e2e8f0;
+}
+
+body {
+    background-color: var(--ff-bg);
+    color: var(--ff-text-main);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.ff-navbar {
+    background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+    box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.25);
+    padding: 0.85rem 0;
+}
+
+.ff-brand {
+    font-size: 1.35rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: #ffffff !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.ff-brand-badge {
+    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #94a3b8 !important;
+    padding: 0.5rem 0.9rem !important;
+    border-radius: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.ff-card {
+    background: var(--ff-card-bg);
+    border: 1px solid var(--ff-border);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ff-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}
+
+.ff-hero {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #ffffff;
+    border-radius: 1.25rem;
+    padding: 2.25rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.ff-hero::after {
+    content: "⚽";
+    position: absolute;
+    right: 2rem;
+    bottom: -1rem;
+    font-size: 8rem;
+    opacity: 0.07;
+    pointer-events: none;
+}
+
+/* Standings Table Styling */
+.table-modern {
+    width: 100%;
+    margin-bottom: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.table-modern thead th {
+    background-color: #f1f5f9;
+    color: #475569;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.9rem 1rem;
+    border-top: none;
+    border-bottom: 1px solid var(--ff-border);
+}
+
+.table-modern tbody tr {
+    transition: background-color 0.15s ease;
+}
+
+.table-modern tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.table-modern tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--ff-border);
+}
+
+/* Compact Table Density Mode */
+.table-compact thead th {
+    padding: 0.45rem 0.6rem !important;
+    font-size: 0.725rem !important;
+}
+
+.table-compact tbody td {
+    padding: 0.4rem 0.6rem !important;
+    font-size: 0.85rem !important;
+}
+
+.table-compact .rank-badge {
+    width: 1.55rem !important;
+    height: 1.55rem !important;
+    font-size: 0.75rem !important;
+}
+
+.table-compact .points-pill {
+    padding: 0.15rem 0.5rem !important;
+    font-size: 0.875rem !important;
+    min-width: 2.75rem !important;
+}
+
+.table-compact .pick-pill {
+    padding: 0.1rem 0.4rem !important;
+    font-size: 0.725rem !important;
+    gap: 0.2rem !important;
+}
+
+.table-compact .pick-pill-winner {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.table-compact .pick-pill-loser {
+    background-color: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+.table-compact .compact-badge {
+    font-size: 0.7rem !important;
+    padding: 0.1rem 0.35rem !important;
+}
+
+/* Rank Badges */
+.rank-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 0.95rem;
+}
+
+.rank-1 {
+    background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(217, 119, 6, 0.4);
+}
+
+.rank-2 {
+    background: linear-gradient(135deg, #cbd5e1 0%, #94a3b8 100%);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(148, 163, 184, 0.4);
+}
+
+.rank-3 {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(180, 83, 9, 0.4);
+}
+
+.rank-other {
+    background-color: #f1f5f9;
+    color: #64748b;
+}
+
+/* Pick Pill Badges */
+.pick-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.5rem;
+    font-size: 0.825rem;
+    font-weight: 600;
+}
+
+.pick-pill-winner {
+    background-color: #ecfdf5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.pick-pill-loser {
+    background-color: #fef2f2;
+    color: #991b1b;
+    border: 1px solid #fecaca;
+}
+
+/* Points Pill */
+.points-pill {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0.35rem 0.85rem;
+    border-radius: 0.6rem;
+    display: inline-block;
+    min-width: 3.5rem;
+    text-align: center;
+}
+
+.points-positive {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.points-zero {
+    background-color: #f1f5f9;
+    color: #475569;
+}
+
+.points-negative {
+    background-color: #fee2e2;
+    color: #b91c1c;
+}
+
+/* Player Selection Cards */
+.player-card {
+    border: 1px solid var(--ff-border);
+    border-radius: 1rem;
+    background: white;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.player-card-header {
+    padding: 1.25rem;
+    background: #f8fafc;
+    border-bottom: 1px solid var(--ff-border);
+}
+
+.division-row {
+    padding: 0.75rem 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.division-row:last-child {
+    border-bottom: none;
+}
+
+/* Admin Styling */
+.admin-badge {
+    background: #4f46e5;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #334155;
+    font-size: 0.9rem;
+    margin-bottom: 0.35rem;
+}
+
+.form-control, .form-select {
+    border-radius: 0.6rem;
+    border-color: #cbd5e1;
+    padding: 0.6rem 0.85rem;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--ff-accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+footer {
+    margin-top: auto;
+    background-color: #ffffff;
+    border-top: 1px solid var(--ff-border);
+    padding: 1.5rem 0;
+    color: var(--ff-text-muted);
+    font-size: 0.875rem;
+}
