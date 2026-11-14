@@ -1,0 +1,2669 @@
+[
+{
+  "model": "leagues.team",
+  "pk": 28,
+  "fields": {
+    "name": "Millwall",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 29,
+  "fields": {
+    "name": "Charlton Athletic",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 30,
+  "fields": {
+    "name": "Wolverhampton Wanderers",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 31,
+  "fields": {
+    "name": "Queens Park Rangers",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 32,
+  "fields": {
+    "name": "Blackburn Rovers",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 33,
+  "fields": {
+    "name": "Watford",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 34,
+  "fields": {
+    "name": "Swansea City",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 35,
+  "fields": {
+    "name": "Bolton Wanderers",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 36,
+  "fields": {
+    "name": "West Bromwich Albion",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 37,
+  "fields": {
+    "name": "Portsmouth",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 38,
+  "fields": {
+    "name": "Middlesbrough",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 39,
+  "fields": {
+    "name": "Cardiff City",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 40,
+  "fields": {
+    "name": "Wrexham",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 41,
+  "fields": {
+    "name": "Birmingham City",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 42,
+  "fields": {
+    "name": "Sheffield United",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 43,
+  "fields": {
+    "name": "Burnley",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 44,
+  "fields": {
+    "name": "West Ham United",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 45,
+  "fields": {
+    "name": "Derby County",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 46,
+  "fields": {
+    "name": "Bristol City",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 47,
+  "fields": {
+    "name": "Lincoln City",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 48,
+  "fields": {
+    "name": "Preston North End",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 49,
+  "fields": {
+    "name": "Stoke City",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 50,
+  "fields": {
+    "name": "Norwich City",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 51,
+  "fields": {
+    "name": "Southampton",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 52,
+  "fields": {
+    "name": "Brighton & Hove Albion",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 53,
+  "fields": {
+    "name": "Arsenal",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 54,
+  "fields": {
+    "name": "Brentford",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 55,
+  "fields": {
+    "name": "Everton",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 56,
+  "fields": {
+    "name": "Hull City",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 57,
+  "fields": {
+    "name": "Ipswich Town",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 58,
+  "fields": {
+    "name": "Manchester City",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 59,
+  "fields": {
+    "name": "Leeds United",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 60,
+  "fields": {
+    "name": "Liverpool",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 61,
+  "fields": {
+    "name": "Newcastle United",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 62,
+  "fields": {
+    "name": "Chelsea",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 63,
+  "fields": {
+    "name": "Fulham",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 64,
+  "fields": {
+    "name": "Bournemouth",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 65,
+  "fields": {
+    "name": "Sunderland",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 66,
+  "fields": {
+    "name": "Nottingham Forest",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 67,
+  "fields": {
+    "name": "Crystal Palace",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 68,
+  "fields": {
+    "name": "Manchester United",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 69,
+  "fields": {
+    "name": "Coventry City",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 70,
+  "fields": {
+    "name": "Tottenham Hotspur",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 71,
+  "fields": {
+    "name": "Aston Villa",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 72,
+  "fields": {
+    "name": "Bradford City",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 73,
+  "fields": {
+    "name": "Huddersfield Town",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 74,
+  "fields": {
+    "name": "Luton Town",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 75,
+  "fields": {
+    "name": "Oxford United",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 76,
+  "fields": {
+    "name": "Cambridge United",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 77,
+  "fields": {
+    "name": "Blackpool",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 78,
+  "fields": {
+    "name": "Burton Albion",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 79,
+  "fields": {
+    "name": "Bromley",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 80,
+  "fields": {
+    "name": "Stockport County",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 81,
+  "fields": {
+    "name": "Leyton Orient",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 82,
+  "fields": {
+    "name": "Mansfield Town",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 83,
+  "fields": {
+    "name": "Sheffield Wednesday",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 84,
+  "fields": {
+    "name": "Peterborough United",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 85,
+  "fields": {
+    "name": "MK Dons",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 86,
+  "fields": {
+    "name": "Notts County",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 87,
+  "fields": {
+    "name": "Wycombe Wanderers",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 88,
+  "fields": {
+    "name": "Reading",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 89,
+  "fields": {
+    "name": "Leicester City",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 90,
+  "fields": {
+    "name": "Stevenage",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 91,
+  "fields": {
+    "name": "Doncaster Rovers",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 92,
+  "fields": {
+    "name": "Barnsley",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 93,
+  "fields": {
+    "name": "Plymouth Argyle",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 94,
+  "fields": {
+    "name": "AFC Wimbledon",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 95,
+  "fields": {
+    "name": "Wigan Athletic",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 96,
+  "fields": {
+    "name": "Barnet",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 97,
+  "fields": {
+    "name": "Crewe Alexandra",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 98,
+  "fields": {
+    "name": "Walsall",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 99,
+  "fields": {
+    "name": "Tranmere Rovers",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 100,
+  "fields": {
+    "name": "Colchester United",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 101,
+  "fields": {
+    "name": "York City",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 102,
+  "fields": {
+    "name": "Swindon Town",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 103,
+  "fields": {
+    "name": "Fleetwood Town",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 104,
+  "fields": {
+    "name": "Grimsby Town",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 105,
+  "fields": {
+    "name": "Bristol Rovers",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 106,
+  "fields": {
+    "name": "Newport County",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 107,
+  "fields": {
+    "name": "Oldham Athletic",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 108,
+  "fields": {
+    "name": "Exeter City",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 109,
+  "fields": {
+    "name": "Cheltenham Town",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 110,
+  "fields": {
+    "name": "Crawley Town",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 111,
+  "fields": {
+    "name": "Chesterfield",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 112,
+  "fields": {
+    "name": "Rotherham United",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 113,
+  "fields": {
+    "name": "Northampton Town",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 114,
+  "fields": {
+    "name": "Accrington Stanley",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 115,
+  "fields": {
+    "name": "Port Vale",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 116,
+  "fields": {
+    "name": "Gillingham",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 117,
+  "fields": {
+    "name": "Salford City",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 118,
+  "fields": {
+    "name": "Rochdale",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.team",
+  "pk": 119,
+  "fields": {
+    "name": "Shrewsbury Town",
+    "short_code": ""
+  }
+},
+{
+  "model": "leagues.sportsleague",
+  "pk": 1,
+  "fields": {
+    "name": "Championship",
+    "bbc_name_slug": "Championship",
+    "last_updated": "2026-10-21T10:25:00Z",
+    "active": true,
+    "order_idx": 1
+  }
+},
+{
+  "model": "leagues.sportsleague",
+  "pk": 2,
+  "fields": {
+    "name": "Premier League",
+    "bbc_name_slug": "PremierLeague",
+    "last_updated": "2026-10-20T01:21:00Z",
+    "active": true,
+    "order_idx": 0
+  }
+},
+{
+  "model": "leagues.sportsleague",
+  "pk": 3,
+  "fields": {
+    "name": "League 1",
+    "bbc_name_slug": "LeagueOne",
+    "last_updated": "2026-10-21T19:13:00Z",
+    "active": true,
+    "order_idx": 2
+  }
+},
+{
+  "model": "leagues.sportsleague",
+  "pk": 4,
+  "fields": {
+    "name": "League 2",
+    "bbc_name_slug": "LeagueTwo",
+    "last_updated": "2026-10-21T01:23:00Z",
+    "active": true,
+    "order_idx": 3
+  }
+},
+{
+  "model": "leagues.sportsleague",
+  "pk": 5,
+  "fields": {
+    "name": "Scottish Premiership",
+    "bbc_name_slug": "ScottishPremiership",
+    "last_updated": "2026-08-23T19:18:28Z",
+    "active": false,
+    "order_idx": 999
+  }
+},
+{
+  "model": "leagues.sportsleague",
+  "pk": 6,
+  "fields": {
+    "name": "Women's Super League",
+    "bbc_name_slug": "Women'sSuperLeague",
+    "last_updated": "2026-08-23T19:18:49Z",
+    "active": false,
+    "order_idx": 999
+  }
+},
+{
+  "model": "leagues.ffleague",
+  "pk": 1,
+  "fields": {
+    "name": "2026",
+    "season": "2026",
+    "is_active": true,
+    "is_locked": true,
+    "is_archived": false,
+    "created_at": "2026-10-21T19:05:14Z",
+    "players": [
+      8,
+      6,
+      4,
+      9,
+      7,
+      10,
+      5
+    ]
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 25,
+  "fields": {
+    "team": 28,
+    "league": 1,
+    "season": "2026",
+    "points": 15,
+    "rank": 12,
+    "played": 11,
+    "won": 4,
+    "drawn": 3,
+    "lost": 4,
+    "goal_difference": 0
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 26,
+  "fields": {
+    "team": 29,
+    "league": 1,
+    "season": "2026",
+    "points": 14,
+    "rank": 17,
+    "played": 11,
+    "won": 3,
+    "drawn": 5,
+    "lost": 3,
+    "goal_difference": -5
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 27,
+  "fields": {
+    "team": 30,
+    "league": 1,
+    "season": "2026",
+    "points": 18,
+    "rank": 7,
+    "played": 11,
+    "won": 5,
+    "drawn": 3,
+    "lost": 3,
+    "goal_difference": 3
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 28,
+  "fields": {
+    "team": 31,
+    "league": 1,
+    "season": "2026",
+    "points": 17,
+    "rank": 9,
+    "played": 11,
+    "won": 4,
+    "drawn": 5,
+    "lost": 2,
+    "goal_difference": 3
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 29,
+  "fields": {
+    "team": 32,
+    "league": 1,
+    "season": "2026",
+    "points": 15,
+    "rank": 10,
+    "played": 11,
+    "won": 4,
+    "drawn": 3,
+    "lost": 4,
+    "goal_difference": 1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 30,
+  "fields": {
+    "team": 33,
+    "league": 1,
+    "season": "2026",
+    "points": 11,
+    "rank": 20,
+    "played": 11,
+    "won": 3,
+    "drawn": 2,
+    "lost": 6,
+    "goal_difference": -9
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 31,
+  "fields": {
+    "team": 34,
+    "league": 1,
+    "season": "2026",
+    "points": 23,
+    "rank": 1,
+    "played": 11,
+    "won": 7,
+    "drawn": 2,
+    "lost": 2,
+    "goal_difference": 8
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 32,
+  "fields": {
+    "team": 35,
+    "league": 1,
+    "season": "2026",
+    "points": 14,
+    "rank": 15,
+    "played": 11,
+    "won": 4,
+    "drawn": 2,
+    "lost": 5,
+    "goal_difference": -3
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 33,
+  "fields": {
+    "team": 36,
+    "league": 1,
+    "season": "2026",
+    "points": 20,
+    "rank": 5,
+    "played": 11,
+    "won": 6,
+    "drawn": 2,
+    "lost": 3,
+    "goal_difference": 3
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 34,
+  "fields": {
+    "team": 37,
+    "league": 1,
+    "season": "2026",
+    "points": 15,
+    "rank": 13,
+    "played": 11,
+    "won": 4,
+    "drawn": 3,
+    "lost": 4,
+    "goal_difference": 0
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 35,
+  "fields": {
+    "team": 38,
+    "league": 1,
+    "season": "2026",
+    "points": 22,
+    "rank": 3,
+    "played": 11,
+    "won": 6,
+    "drawn": 4,
+    "lost": 1,
+    "goal_difference": 6
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 36,
+  "fields": {
+    "team": 39,
+    "league": 1,
+    "season": "2026",
+    "points": 11,
+    "rank": 19,
+    "played": 11,
+    "won": 2,
+    "drawn": 5,
+    "lost": 4,
+    "goal_difference": 1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 37,
+  "fields": {
+    "team": 40,
+    "league": 1,
+    "season": "2026",
+    "points": 14,
+    "rank": 14,
+    "played": 11,
+    "won": 3,
+    "drawn": 5,
+    "lost": 3,
+    "goal_difference": -1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 38,
+  "fields": {
+    "team": 41,
+    "league": 1,
+    "season": "2026",
+    "points": 20,
+    "rank": 4,
+    "played": 11,
+    "won": 5,
+    "drawn": 5,
+    "lost": 1,
+    "goal_difference": 9
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 39,
+  "fields": {
+    "team": 42,
+    "league": 1,
+    "season": "2026",
+    "points": 15,
+    "rank": 11,
+    "played": 11,
+    "won": 4,
+    "drawn": 3,
+    "lost": 4,
+    "goal_difference": 1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 40,
+  "fields": {
+    "team": 43,
+    "league": 1,
+    "season": "2026",
+    "points": 8,
+    "rank": 22,
+    "played": 11,
+    "won": 1,
+    "drawn": 5,
+    "lost": 5,
+    "goal_difference": -5
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 41,
+  "fields": {
+    "team": 44,
+    "league": 1,
+    "season": "2026",
+    "points": 22,
+    "rank": 2,
+    "played": 11,
+    "won": 6,
+    "drawn": 4,
+    "lost": 1,
+    "goal_difference": 18
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 42,
+  "fields": {
+    "team": 45,
+    "league": 1,
+    "season": "2026",
+    "points": 6,
+    "rank": 23,
+    "played": 11,
+    "won": 1,
+    "drawn": 3,
+    "lost": 7,
+    "goal_difference": -11
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 43,
+  "fields": {
+    "team": 46,
+    "league": 1,
+    "season": "2026",
+    "points": 14,
+    "rank": 16,
+    "played": 11,
+    "won": 4,
+    "drawn": 2,
+    "lost": 5,
+    "goal_difference": -3
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 44,
+  "fields": {
+    "team": 47,
+    "league": 1,
+    "season": "2026",
+    "points": 12,
+    "rank": 18,
+    "played": 11,
+    "won": 3,
+    "drawn": 3,
+    "lost": 5,
+    "goal_difference": -10
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 45,
+  "fields": {
+    "team": 48,
+    "league": 1,
+    "season": "2026",
+    "points": 4,
+    "rank": 24,
+    "played": 11,
+    "won": 1,
+    "drawn": 1,
+    "lost": 9,
+    "goal_difference": -15
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 46,
+  "fields": {
+    "team": 49,
+    "league": 1,
+    "season": "2026",
+    "points": 19,
+    "rank": 6,
+    "played": 11,
+    "won": 6,
+    "drawn": 1,
+    "lost": 4,
+    "goal_difference": 2
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 47,
+  "fields": {
+    "team": 50,
+    "league": 1,
+    "season": "2026",
+    "points": 9,
+    "rank": 21,
+    "played": 11,
+    "won": 3,
+    "drawn": 0,
+    "lost": 8,
+    "goal_difference": -4
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 48,
+  "fields": {
+    "team": 51,
+    "league": 1,
+    "season": "2026",
+    "points": 17,
+    "rank": 8,
+    "played": 11,
+    "won": 6,
+    "drawn": 3,
+    "lost": 2,
+    "goal_difference": 11
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 49,
+  "fields": {
+    "team": 52,
+    "league": 2,
+    "season": "2026",
+    "points": 16,
+    "rank": 3,
+    "played": 7,
+    "won": 5,
+    "drawn": 1,
+    "lost": 1,
+    "goal_difference": 18
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 50,
+  "fields": {
+    "team": 53,
+    "league": 2,
+    "season": "2026",
+    "points": 18,
+    "rank": 2,
+    "played": 7,
+    "won": 6,
+    "drawn": 0,
+    "lost": 1,
+    "goal_difference": 6
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 51,
+  "fields": {
+    "team": 54,
+    "league": 2,
+    "season": "2026",
+    "points": 10,
+    "rank": 6,
+    "played": 7,
+    "won": 2,
+    "drawn": 4,
+    "lost": 1,
+    "goal_difference": 5
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 52,
+  "fields": {
+    "team": 55,
+    "league": 2,
+    "season": "2026",
+    "points": 10,
+    "rank": 8,
+    "played": 7,
+    "won": 2,
+    "drawn": 4,
+    "lost": 1,
+    "goal_difference": 1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 53,
+  "fields": {
+    "team": 56,
+    "league": 2,
+    "season": "2026",
+    "points": 9,
+    "rank": 9,
+    "played": 7,
+    "won": 2,
+    "drawn": 3,
+    "lost": 2,
+    "goal_difference": 1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 54,
+  "fields": {
+    "team": 57,
+    "league": 2,
+    "season": "2026",
+    "points": 9,
+    "rank": 10,
+    "played": 7,
+    "won": 3,
+    "drawn": 0,
+    "lost": 4,
+    "goal_difference": -4
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 55,
+  "fields": {
+    "team": 58,
+    "league": 2,
+    "season": "2026",
+    "points": 21,
+    "rank": 1,
+    "played": 7,
+    "won": 7,
+    "drawn": 0,
+    "lost": 0,
+    "goal_difference": 12
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 56,
+  "fields": {
+    "team": 59,
+    "league": 2,
+    "season": "2026",
+    "points": 10,
+    "rank": 7,
+    "played": 7,
+    "won": 2,
+    "drawn": 4,
+    "lost": 1,
+    "goal_difference": 3
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 57,
+  "fields": {
+    "team": 60,
+    "league": 2,
+    "season": "2026",
+    "points": 12,
+    "rank": 5,
+    "played": 7,
+    "won": 3,
+    "drawn": 3,
+    "lost": 1,
+    "goal_difference": 1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 58,
+  "fields": {
+    "team": 61,
+    "league": 2,
+    "season": "2026",
+    "points": 8,
+    "rank": 11,
+    "played": 7,
+    "won": 2,
+    "drawn": 2,
+    "lost": 3,
+    "goal_difference": -4
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 59,
+  "fields": {
+    "team": 62,
+    "league": 2,
+    "season": "2026",
+    "points": 13,
+    "rank": 4,
+    "played": 7,
+    "won": 4,
+    "drawn": 1,
+    "lost": 2,
+    "goal_difference": 4
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 60,
+  "fields": {
+    "team": 63,
+    "league": 2,
+    "season": "2026",
+    "points": 5,
+    "rank": 18,
+    "played": 7,
+    "won": 1,
+    "drawn": 2,
+    "lost": 4,
+    "goal_difference": -3
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 61,
+  "fields": {
+    "team": 64,
+    "league": 2,
+    "season": "2026",
+    "points": 6,
+    "rank": 15,
+    "played": 7,
+    "won": 1,
+    "drawn": 3,
+    "lost": 3,
+    "goal_difference": -4
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 62,
+  "fields": {
+    "team": 65,
+    "league": 2,
+    "season": "2026",
+    "points": 4,
+    "rank": 20,
+    "played": 7,
+    "won": 1,
+    "drawn": 1,
+    "lost": 5,
+    "goal_difference": -8
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 63,
+  "fields": {
+    "team": 66,
+    "league": 2,
+    "season": "2026",
+    "points": 5,
+    "rank": 19,
+    "played": 7,
+    "won": 1,
+    "drawn": 2,
+    "lost": 4,
+    "goal_difference": -4
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 64,
+  "fields": {
+    "team": 67,
+    "league": 2,
+    "season": "2026",
+    "points": 7,
+    "rank": 14,
+    "played": 7,
+    "won": 2,
+    "drawn": 1,
+    "lost": 4,
+    "goal_difference": -8
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 65,
+  "fields": {
+    "team": 68,
+    "league": 2,
+    "season": "2026",
+    "points": 7,
+    "rank": 13,
+    "played": 7,
+    "won": 1,
+    "drawn": 4,
+    "lost": 2,
+    "goal_difference": 0
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 66,
+  "fields": {
+    "team": 69,
+    "league": 2,
+    "season": "2026",
+    "points": 6,
+    "rank": 17,
+    "played": 7,
+    "won": 2,
+    "drawn": 0,
+    "lost": 5,
+    "goal_difference": -8
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 67,
+  "fields": {
+    "team": 70,
+    "league": 2,
+    "season": "2026",
+    "points": 6,
+    "rank": 16,
+    "played": 7,
+    "won": 1,
+    "drawn": 3,
+    "lost": 3,
+    "goal_difference": -4
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 68,
+  "fields": {
+    "team": 71,
+    "league": 2,
+    "season": "2026",
+    "points": 8,
+    "rank": 12,
+    "played": 7,
+    "won": 2,
+    "drawn": 2,
+    "lost": 3,
+    "goal_difference": -4
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 69,
+  "fields": {
+    "team": 72,
+    "league": 3,
+    "season": "2026",
+    "points": 21,
+    "rank": 3,
+    "played": 11,
+    "won": 6,
+    "drawn": 3,
+    "lost": 2,
+    "goal_difference": 5
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 70,
+  "fields": {
+    "team": 73,
+    "league": 3,
+    "season": "2026",
+    "points": 22,
+    "rank": 2,
+    "played": 11,
+    "won": 6,
+    "drawn": 4,
+    "lost": 1,
+    "goal_difference": 12
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 71,
+  "fields": {
+    "team": 74,
+    "league": 3,
+    "season": "2026",
+    "points": 14,
+    "rank": 13,
+    "played": 10,
+    "won": 4,
+    "drawn": 2,
+    "lost": 4,
+    "goal_difference": 1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 72,
+  "fields": {
+    "team": 75,
+    "league": 3,
+    "season": "2026",
+    "points": 18,
+    "rank": 7,
+    "played": 9,
+    "won": 5,
+    "drawn": 3,
+    "lost": 1,
+    "goal_difference": 8
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 73,
+  "fields": {
+    "team": 76,
+    "league": 3,
+    "season": "2026",
+    "points": 20,
+    "rank": 4,
+    "played": 11,
+    "won": 5,
+    "drawn": 5,
+    "lost": 1,
+    "goal_difference": 4
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 74,
+  "fields": {
+    "team": 77,
+    "league": 3,
+    "season": "2026",
+    "points": 11,
+    "rank": 17,
+    "played": 10,
+    "won": 3,
+    "drawn": 2,
+    "lost": 5,
+    "goal_difference": -1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 75,
+  "fields": {
+    "team": 78,
+    "league": 3,
+    "season": "2026",
+    "points": 14,
+    "rank": 14,
+    "played": 12,
+    "won": 3,
+    "drawn": 5,
+    "lost": 4,
+    "goal_difference": -2
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 76,
+  "fields": {
+    "team": 79,
+    "league": 3,
+    "season": "2026",
+    "points": 8,
+    "rank": 23,
+    "played": 10,
+    "won": 2,
+    "drawn": 2,
+    "lost": 6,
+    "goal_difference": -16
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 77,
+  "fields": {
+    "team": 80,
+    "league": 3,
+    "season": "2026",
+    "points": 22,
+    "rank": 1,
+    "played": 11,
+    "won": 7,
+    "drawn": 1,
+    "lost": 3,
+    "goal_difference": 12
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 78,
+  "fields": {
+    "team": 81,
+    "league": 3,
+    "season": "2026",
+    "points": 15,
+    "rank": 10,
+    "played": 11,
+    "won": 4,
+    "drawn": 3,
+    "lost": 4,
+    "goal_difference": 4
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 79,
+  "fields": {
+    "team": 82,
+    "league": 3,
+    "season": "2026",
+    "points": 15,
+    "rank": 12,
+    "played": 10,
+    "won": 4,
+    "drawn": 3,
+    "lost": 3,
+    "goal_difference": 1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 80,
+  "fields": {
+    "team": 83,
+    "league": 3,
+    "season": "2026",
+    "points": 18,
+    "rank": 6,
+    "played": 10,
+    "won": 5,
+    "drawn": 3,
+    "lost": 2,
+    "goal_difference": 10
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 81,
+  "fields": {
+    "team": 84,
+    "league": 3,
+    "season": "2026",
+    "points": 9,
+    "rank": 21,
+    "played": 11,
+    "won": 2,
+    "drawn": 3,
+    "lost": 6,
+    "goal_difference": -10
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 82,
+  "fields": {
+    "team": 85,
+    "league": 3,
+    "season": "2026",
+    "points": 9,
+    "rank": 20,
+    "played": 10,
+    "won": 1,
+    "drawn": 6,
+    "lost": 3,
+    "goal_difference": -7
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 83,
+  "fields": {
+    "team": 86,
+    "league": 3,
+    "season": "2026",
+    "points": 10,
+    "rank": 18,
+    "played": 10,
+    "won": 2,
+    "drawn": 4,
+    "lost": 4,
+    "goal_difference": -3
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 84,
+  "fields": {
+    "team": 87,
+    "league": 3,
+    "season": "2026",
+    "points": 14,
+    "rank": 15,
+    "played": 11,
+    "won": 3,
+    "drawn": 5,
+    "lost": 3,
+    "goal_difference": -4
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 85,
+  "fields": {
+    "team": 88,
+    "league": 3,
+    "season": "2026",
+    "points": 16,
+    "rank": 8,
+    "played": 11,
+    "won": 4,
+    "drawn": 4,
+    "lost": 3,
+    "goal_difference": 10
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 86,
+  "fields": {
+    "team": 89,
+    "league": 3,
+    "season": "2026",
+    "points": 15,
+    "rank": 11,
+    "played": 10,
+    "won": 4,
+    "drawn": 3,
+    "lost": 3,
+    "goal_difference": 1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 87,
+  "fields": {
+    "team": 90,
+    "league": 3,
+    "season": "2026",
+    "points": 15,
+    "rank": 9,
+    "played": 10,
+    "won": 4,
+    "drawn": 3,
+    "lost": 3,
+    "goal_difference": 5
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 88,
+  "fields": {
+    "team": 91,
+    "league": 3,
+    "season": "2026",
+    "points": 9,
+    "rank": 19,
+    "played": 10,
+    "won": 2,
+    "drawn": 3,
+    "lost": 5,
+    "goal_difference": -3
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 89,
+  "fields": {
+    "team": 92,
+    "league": 3,
+    "season": "2026",
+    "points": 8,
+    "rank": 22,
+    "played": 10,
+    "won": 2,
+    "drawn": 2,
+    "lost": 6,
+    "goal_difference": -9
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 90,
+  "fields": {
+    "team": 93,
+    "league": 3,
+    "season": "2026",
+    "points": 19,
+    "rank": 5,
+    "played": 12,
+    "won": 6,
+    "drawn": 1,
+    "lost": 5,
+    "goal_difference": 1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 91,
+  "fields": {
+    "team": 94,
+    "league": 3,
+    "season": "2026",
+    "points": 12,
+    "rank": 16,
+    "played": 11,
+    "won": 3,
+    "drawn": 3,
+    "lost": 5,
+    "goal_difference": -11
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 92,
+  "fields": {
+    "team": 95,
+    "league": 3,
+    "season": "2026",
+    "points": 7,
+    "rank": 24,
+    "played": 10,
+    "won": 2,
+    "drawn": 1,
+    "lost": 7,
+    "goal_difference": -8
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 93,
+  "fields": {
+    "team": 96,
+    "league": 4,
+    "season": "2026",
+    "points": 21,
+    "rank": 2,
+    "played": 10,
+    "won": 6,
+    "drawn": 3,
+    "lost": 1,
+    "goal_difference": 8
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 94,
+  "fields": {
+    "team": 97,
+    "league": 4,
+    "season": "2026",
+    "points": 21,
+    "rank": 3,
+    "played": 12,
+    "won": 5,
+    "drawn": 6,
+    "lost": 1,
+    "goal_difference": 4
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 95,
+  "fields": {
+    "team": 98,
+    "league": 4,
+    "season": "2026",
+    "points": 19,
+    "rank": 4,
+    "played": 11,
+    "won": 4,
+    "drawn": 7,
+    "lost": 0,
+    "goal_difference": 9
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 96,
+  "fields": {
+    "team": 99,
+    "league": 4,
+    "season": "2026",
+    "points": 15,
+    "rank": 13,
+    "played": 12,
+    "won": 3,
+    "drawn": 6,
+    "lost": 3,
+    "goal_difference": 0
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 97,
+  "fields": {
+    "team": 100,
+    "league": 4,
+    "season": "2026",
+    "points": 12,
+    "rank": 19,
+    "played": 11,
+    "won": 2,
+    "drawn": 6,
+    "lost": 3,
+    "goal_difference": -3
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 98,
+  "fields": {
+    "team": 101,
+    "league": 4,
+    "season": "2026",
+    "points": 17,
+    "rank": 6,
+    "played": 11,
+    "won": 4,
+    "drawn": 5,
+    "lost": 2,
+    "goal_difference": 6
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 99,
+  "fields": {
+    "team": 102,
+    "league": 4,
+    "season": "2026",
+    "points": 15,
+    "rank": 15,
+    "played": 12,
+    "won": 4,
+    "drawn": 3,
+    "lost": 5,
+    "goal_difference": -3
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 100,
+  "fields": {
+    "team": 103,
+    "league": 4,
+    "season": "2026",
+    "points": 14,
+    "rank": 18,
+    "played": 12,
+    "won": 3,
+    "drawn": 5,
+    "lost": 4,
+    "goal_difference": -1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 101,
+  "fields": {
+    "team": 104,
+    "league": 4,
+    "season": "2026",
+    "points": 14,
+    "rank": 17,
+    "played": 12,
+    "won": 3,
+    "drawn": 5,
+    "lost": 4,
+    "goal_difference": 0
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 102,
+  "fields": {
+    "team": 105,
+    "league": 4,
+    "season": "2026",
+    "points": 15,
+    "rank": 16,
+    "played": 12,
+    "won": 5,
+    "drawn": 0,
+    "lost": 7,
+    "goal_difference": -4
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 103,
+  "fields": {
+    "team": 106,
+    "league": 4,
+    "season": "2026",
+    "points": 15,
+    "rank": 12,
+    "played": 12,
+    "won": 3,
+    "drawn": 6,
+    "lost": 3,
+    "goal_difference": 1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 104,
+  "fields": {
+    "team": 107,
+    "league": 4,
+    "season": "2026",
+    "points": 11,
+    "rank": 21,
+    "played": 11,
+    "won": 3,
+    "drawn": 2,
+    "lost": 6,
+    "goal_difference": -4
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 105,
+  "fields": {
+    "team": 108,
+    "league": 4,
+    "season": "2026",
+    "points": 16,
+    "rank": 10,
+    "played": 12,
+    "won": 4,
+    "drawn": 4,
+    "lost": 4,
+    "goal_difference": 2
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 106,
+  "fields": {
+    "team": 109,
+    "league": 4,
+    "season": "2026",
+    "points": 18,
+    "rank": 5,
+    "played": 12,
+    "won": 5,
+    "drawn": 3,
+    "lost": 4,
+    "goal_difference": -1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 107,
+  "fields": {
+    "team": 110,
+    "league": 4,
+    "season": "2026",
+    "points": 5,
+    "rank": 24,
+    "played": 10,
+    "won": 1,
+    "drawn": 2,
+    "lost": 7,
+    "goal_difference": -9
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 108,
+  "fields": {
+    "team": 111,
+    "league": 4,
+    "season": "2026",
+    "points": 16,
+    "rank": 9,
+    "played": 12,
+    "won": 4,
+    "drawn": 4,
+    "lost": 4,
+    "goal_difference": 2
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 109,
+  "fields": {
+    "team": 112,
+    "league": 4,
+    "season": "2026",
+    "points": 11,
+    "rank": 22,
+    "played": 12,
+    "won": 2,
+    "drawn": 5,
+    "lost": 5,
+    "goal_difference": -6
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 110,
+  "fields": {
+    "team": 113,
+    "league": 4,
+    "season": "2026",
+    "points": 10,
+    "rank": 23,
+    "played": 10,
+    "won": 2,
+    "drawn": 4,
+    "lost": 4,
+    "goal_difference": -2
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 111,
+  "fields": {
+    "team": 114,
+    "league": 4,
+    "season": "2026",
+    "points": 15,
+    "rank": 11,
+    "played": 12,
+    "won": 3,
+    "drawn": 6,
+    "lost": 3,
+    "goal_difference": 1
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 112,
+  "fields": {
+    "team": 115,
+    "league": 4,
+    "season": "2026",
+    "points": 12,
+    "rank": 20,
+    "played": 10,
+    "won": 3,
+    "drawn": 3,
+    "lost": 4,
+    "goal_difference": -4
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 113,
+  "fields": {
+    "team": 116,
+    "league": 4,
+    "season": "2026",
+    "points": 17,
+    "rank": 7,
+    "played": 12,
+    "won": 4,
+    "drawn": 5,
+    "lost": 3,
+    "goal_difference": 3
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 114,
+  "fields": {
+    "team": 117,
+    "league": 4,
+    "season": "2026",
+    "points": 25,
+    "rank": 1,
+    "played": 12,
+    "won": 8,
+    "drawn": 1,
+    "lost": 3,
+    "goal_difference": 7
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 115,
+  "fields": {
+    "team": 118,
+    "league": 4,
+    "season": "2026",
+    "points": 15,
+    "rank": 14,
+    "played": 12,
+    "won": 4,
+    "drawn": 3,
+    "lost": 5,
+    "goal_difference": -2
+  }
+},
+{
+  "model": "leagues.teamstanding",
+  "pk": 116,
+  "fields": {
+    "team": 119,
+    "league": 4,
+    "season": "2026",
+    "points": 17,
+    "rank": 8,
+    "played": 12,
+    "won": 5,
+    "drawn": 2,
+    "lost": 5,
+    "goal_difference": -4
+  }
+},
+{
+  "model": "leagues.player",
+  "pk": 4,
+  "fields": {
+    "name": "Graham",
+    "email": ""
+  }
+},
+{
+  "model": "leagues.player",
+  "pk": 5,
+  "fields": {
+    "name": "Terry",
+    "email": ""
+  }
+},
+{
+  "model": "leagues.player",
+  "pk": 6,
+  "fields": {
+    "name": "Ben (South)",
+    "email": ""
+  }
+},
+{
+  "model": "leagues.player",
+  "pk": 7,
+  "fields": {
+    "name": "Kev",
+    "email": ""
+  }
+},
+{
+  "model": "leagues.player",
+  "pk": 8,
+  "fields": {
+    "name": "Ben (North)",
+    "email": ""
+  }
+},
+{
+  "model": "leagues.player",
+  "pk": 9,
+  "fields": {
+    "name": "Kane",
+    "email": ""
+  }
+},
+{
+  "model": "leagues.player",
+  "pk": 10,
+  "fields": {
+    "name": "Steve",
+    "email": ""
+  }
+},
+{
+  "model": "leagues.player",
+  "pk": 11,
+  "fields": {
+    "name": "Jordan",
+    "email": null
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 5,
+  "fields": {
+    "ff_league": 1,
+    "player": 4,
+    "league": 2,
+    "winner": 68,
+    "loser": 56
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 6,
+  "fields": {
+    "ff_league": 1,
+    "player": 4,
+    "league": 1,
+    "winner": 44,
+    "loser": 47
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 7,
+  "fields": {
+    "ff_league": 1,
+    "player": 4,
+    "league": 3,
+    "winner": 89,
+    "loser": 94
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 8,
+  "fields": {
+    "ff_league": 1,
+    "player": 4,
+    "league": 4,
+    "winner": 117,
+    "loser": 106
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 9,
+  "fields": {
+    "ff_league": 1,
+    "player": 5,
+    "league": 2,
+    "winner": 70,
+    "loser": 56
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 10,
+  "fields": {
+    "ff_league": 1,
+    "player": 5,
+    "league": 1,
+    "winner": 46,
+    "loser": 29
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 11,
+  "fields": {
+    "ff_league": 1,
+    "player": 5,
+    "league": 3,
+    "winner": 93,
+    "loser": 86
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 12,
+  "fields": {
+    "ff_league": 1,
+    "player": 5,
+    "league": 4,
+    "winner": 108,
+    "loser": 106
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 13,
+  "fields": {
+    "ff_league": 1,
+    "player": 6,
+    "league": 2,
+    "winner": 58,
+    "loser": 56
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 14,
+  "fields": {
+    "ff_league": 1,
+    "player": 6,
+    "league": 1,
+    "winner": 44,
+    "loser": 47
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 15,
+  "fields": {
+    "ff_league": 1,
+    "player": 6,
+    "league": 3,
+    "winner": 74,
+    "loser": 78
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 16,
+  "fields": {
+    "ff_league": 1,
+    "player": 6,
+    "league": 4,
+    "winner": 96,
+    "loser": 109
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 17,
+  "fields": {
+    "ff_league": 1,
+    "player": 7,
+    "league": 2,
+    "winner": 53,
+    "loser": 56
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 18,
+  "fields": {
+    "ff_league": 1,
+    "player": 7,
+    "league": 1,
+    "winner": 44,
+    "loser": 47
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 19,
+  "fields": {
+    "ff_league": 1,
+    "player": 7,
+    "league": 3,
+    "winner": 89,
+    "loser": 79
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 20,
+  "fields": {
+    "ff_league": 1,
+    "player": 7,
+    "league": 4,
+    "winner": 104,
+    "loser": 105
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 21,
+  "fields": {
+    "ff_league": 1,
+    "player": 8,
+    "league": 2,
+    "winner": 53,
+    "loser": 56
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 22,
+  "fields": {
+    "ff_league": 1,
+    "player": 8,
+    "league": 1,
+    "winner": 44,
+    "loser": 48
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 23,
+  "fields": {
+    "ff_league": 1,
+    "player": 8,
+    "league": 3,
+    "winner": 93,
+    "loser": 79
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 24,
+  "fields": {
+    "ff_league": 1,
+    "player": 8,
+    "league": 4,
+    "winner": 105,
+    "loser": 114
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 25,
+  "fields": {
+    "ff_league": 1,
+    "player": 9,
+    "league": 2,
+    "winner": 53,
+    "loser": 56
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 26,
+  "fields": {
+    "ff_league": 1,
+    "player": 9,
+    "league": 1,
+    "winner": 44,
+    "loser": 35
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 27,
+  "fields": {
+    "ff_league": 1,
+    "player": 9,
+    "league": 3,
+    "winner": 89,
+    "loser": 79
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 28,
+  "fields": {
+    "ff_league": 1,
+    "player": 9,
+    "league": 4,
+    "winner": 117,
+    "loser": 106
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 29,
+  "fields": {
+    "ff_league": 1,
+    "player": 10,
+    "league": 2,
+    "winner": 68,
+    "loser": 56
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 30,
+  "fields": {
+    "ff_league": 1,
+    "player": 10,
+    "league": 1,
+    "winner": 42,
+    "loser": 39
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 31,
+  "fields": {
+    "ff_league": 1,
+    "player": 10,
+    "league": 3,
+    "winner": 89,
+    "loser": 83
+  }
+},
+{
+  "model": "leagues.selection",
+  "pk": 32,
+  "fields": {
+    "ff_league": 1,
+    "player": 10,
+    "league": 4,
+    "winner": 102,
+    "loser": 119
+  }
+}
+]

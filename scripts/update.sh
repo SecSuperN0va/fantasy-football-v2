@@ -75,9 +75,27 @@ fi
 log "Running database migrations..."
 "$VENV_BIN/python" "$APP_DIR/manage.py" migrate --noinput
 
+# Load initial fixture data once if not already loaded
+if [ -f "$APP_DIR/leagues/fixtures/initial_data.json" ] && [ ! -f "$APP_DIR/.initial_data_loaded" ]; then
+    log "Loading initial database fixture..."
+    "$VENV_BIN/python" "$APP_DIR/manage.py" loaddata initial_data.json
+    touch "$APP_DIR/.initial_data_loaded"
+    log "Initial database fixture loaded."
+fi
+
 # Collect static files if required
 log "Collecting static assets..."
 "$VENV_BIN/python" "$APP_DIR/manage.py" collectstatic --noinput 2>/dev/null || true
+
+# Update systemd service file if changed and restart
+SERVICE_DEST="/etc/systemd/system/fantasy-football.service"
+CURRENT_USER="$(whoami)"
+log "Updating systemd service configuration..."
+sudo cp "$APP_DIR/scripts/fantasy-football.service" "$SERVICE_DEST"
+sudo sed -i "s|User=pi|User=$CURRENT_USER|g" "$SERVICE_DEST"
+sudo sed -i "s|Group=pi|Group=$CURRENT_USER|g" "$SERVICE_DEST"
+sudo sed -i "s|/home/pi/fantasy_football|$APP_DIR|g" "$SERVICE_DEST"
+sudo systemctl daemon-reload
 
 # Restart systemd service
 log "Restarting fantasy-football service..."
